@@ -1,26 +1,41 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-// import App from './App.jsx'
-// import './index.css'
+
 
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import Heade from '../components/header/Heade.jsx';
+import App from './App.jsx';
+import Posts from '../components/posts/Posts.jsx';
+import NewPosts from '../components/newposts/NewPosts.jsx';
 
 
 
 const router= createBrowserRouter([
   {
     path: "/",
-    element:<Heade/>,
-    errorElement:<h1>erro the page doest exist 404</h1>
+    element:<App/>,
+    errorElement:<h1>erro the page doest exist 404</h1>,
+    children:[
+      {
+        path:'/',
+        element:<Posts/>,
+      },
+      {
+        path:'/posts',
+        element:<Posts/>,
+        index:true
+      },{
+        path:"/new-post",
+        element:<NewPosts/>
+      }
+    ]
 
-  },
-  {
-    path:'/posts',
-    element:<div>posts page</div>
+  },{
+    path:"/other",
+    element:<p>other</p>
+
   }
 ])
 
