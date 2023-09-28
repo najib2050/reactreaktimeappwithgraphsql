@@ -9,7 +9,11 @@ import {
 import App from './App.jsx';
 import Posts from '../components/posts/Posts.jsx';
 import NewPosts from '../components/newposts/NewPosts.jsx';
-
+import { GlobalStyle } from './globalStyle/GlobalStyle.js';
+import OtherPath from '../components/other/OtherPath.jsx';
+import { ApolloProvider } from '@apollo/client';
+import { client } from '../Appolo.js';
+// import { Client } from './Oppolo.js';
 
 
 const router= createBrowserRouter([
@@ -34,14 +38,19 @@ const router= createBrowserRouter([
 
   },{
     path:"/other",
-    element:<p>other</p>
+    element:<OtherPath/>
 
   }
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <ApolloProvider client={client}>
     <RouterProvider router={router}/>
+    <GlobalStyle/>
+
+    </ApolloProvider>
     {/* <App /> */}
+    
   </React.StrictMode>,
 )
