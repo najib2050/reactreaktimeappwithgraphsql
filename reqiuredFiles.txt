@@ -1,0 +1,29 @@
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:najib2050/reactreaktimeappwithgraphsql.git
+git push -u origin main
+
+we will need components or routes;
+  1:react-dom with updated vertion 6.8 and above
+  2:react apolo and graph ql
+  3:react components
+
+POJECT PROCEDURES
+  1:implement react router dom
+    -https://reactrouter.com/en/main
+      -iam new
+       --npm install react-router-dom
+  
+  2: styled components
+    -use for daynamic page
+    -css and js are applied to gather
+     https://styled-components.com/
+     npm install styled-components
+  
+  3: implement minust in react router
+  4:set up apollo client  also it has apolo server
+    use as connection between client and the database
+     https://www.apollographql.com/docs/react/get-started:  npm install @apollo/client graphql
+   
