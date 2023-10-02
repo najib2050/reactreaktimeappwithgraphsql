@@ -26,4 +26,17 @@ POJECT PROCEDURES
   4:set up apollo client  also it has apolo server
     use as connection between client and the database
      https://www.apollographql.com/docs/react/get-started:  npm install @apollo/client graphql
+  
+  5:read graphql queries with useQuery hook
+     -how do we interact to graphSql database
+      /*
+    how do we intract with qragh sql 
+     we can intract with by using these terminolgies
+       1:useMutation
+         -is use for DELETE, UPDATE AND INSERT
+       2:useQuerry
+         - is use for READ
+       3:useSubscribtion
+         - is use for REAL TIME DATA
+    */
    

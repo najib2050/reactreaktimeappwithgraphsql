@@ -1,26 +1,25 @@
 // import React from 'react'
 
-// import { Link } from "react-router-dom"
 
+import { Nave,Logo,Menu,MenuItem } from "./Style"
 const Heade = () => {
-  return (
-    <div>Heade
-        <nav>
-            <a href="/">logo</a>
-            <ul>
+    return (
+        <div>Heade
+            {/*to stop refreshing the page use Link
+        not href but takes to
+        <Link to=""/>
+         */}
+            <Nave>
 
-                <li>
-                    <a href="/posts">posts</a>
-                    {/* <Link href='/posts '>posts</Link> */}
-                </li>
-                <li>
-                    <a href="/new-post">new post</a>
-                    {/* <Link href='/new-post'>new posts</Link> */}
-                </li>
-            </ul>
-        </nav>
-    </div>
-  )
+                <Logo to="/">Logo</Logo>
+                <Menu>
+                        <MenuItem to='/posts'>posts</MenuItem>
+                        <MenuItem to='/new-post'>new posts</MenuItem>
+                        <MenuItem to='/other'>other pages</MenuItem>
+                </Menu>
+            </Nave>
+        </div>
+    )
 }
 
 export default Heade

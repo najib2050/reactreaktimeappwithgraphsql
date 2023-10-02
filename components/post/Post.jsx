@@ -1,11 +1,31 @@
 // import React from 'react'
 
+import { Link } from "react-router-dom"
+import { CardGrid, CardInfo, Category, Title } from "./Style"
 
 
-const Post = (props) => {
-    console.log(props)
+
+const Post = ({ body, date, id, thumnail, title, index }) => {
+
+
   return (
-    <div>post</div>
+    <div>
+      <CardGrid to={`/Post ${id}`} index={index} thumnail={thumnail}>
+        <CardInfo>
+          <Category>code</Category>
+          <Title>{title}</Title>
+
+    
+    
+            <div>
+              <span>najiib</span>
+              <span>{new Date(date).toDateString()}</span>
+            </div>
+      
+        </CardInfo>
+
+      </CardGrid>
+    </div>
   )
 }
 

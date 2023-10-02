@@ -4,7 +4,7 @@ const OtherPath = () => {
   return (
     <div>
         <li>
-            <a href='/other'>OtherPath</a>
+            othre page
         </li>
     </div>
   )

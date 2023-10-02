@@ -38,8 +38,9 @@ const Posts = () => {
   console.log("data", data)
   return (
     <Grid>
-      {data.posts.map((post)=>{
-        return <Post {...post} key={post.id}/> 
+      {data.posts.map((post,index)=>{
+        console.log(index)
+        return <Post {...post} key={post.id} index={index}/> 
       })}
     </Grid>
     

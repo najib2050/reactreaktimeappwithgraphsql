@@ -13,32 +13,32 @@ import { GlobalStyle } from './globalStyle/GlobalStyle.js';
 import OtherPath from '../components/other/OtherPath.jsx';
 import { ApolloProvider } from '@apollo/client';
 import { client } from '../Appolo.js';
-// import { Client } from './Oppolo.js';
 
 
-const router= createBrowserRouter([
+
+const router = createBrowserRouter([
   {
     path: "/",
-    element:<App/>,
-    errorElement:<h1>erro the page doest exist 404</h1>,
-    children:[
+    element: <App />,
+    errorElement: <h1>erro the page doest exist 404</h1>,
+    children: [
       {
-        path:'/',
-        element:<Posts/>,
+        path: '/',
+        element: <Posts />,
       },
       {
-        path:'/posts',
-        element:<Posts/>,
-        index:true
-      },{
-        path:"/new-post",
-        element:<NewPosts/>
+        path: '/posts',
+        element: <Posts />,
+        index: true
+      }, {
+        path: "/new-post",
+        element: <NewPosts />
       }
     ]
 
-  },{
-    path:"/other",
-    element:<OtherPath/>
+  }, {
+    path: "/other",
+    element: <OtherPath />
 
   }
 ])
@@ -46,11 +46,10 @@ const router= createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ApolloProvider client={client}>
-    <RouterProvider router={router}/>
-    <GlobalStyle/>
-
+      <RouterProvider router={router} />
+      <GlobalStyle />
     </ApolloProvider>
     {/* <App /> */}
-    
+
   </React.StrictMode>,
 )
