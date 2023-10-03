@@ -10,7 +10,7 @@ const Post = ({ body, date, id, thumnail, title, index }) => {
 
   return (
     <div>
-      <CardGrid to={`/Post ${id}`} index={index} thumnail={thumnail}>
+      <CardGrid to={`/post/${id}`} index={index} thumnail={thumnail}>
         <CardInfo>
           <Category>code</Category>
           <Title>{title}</Title>

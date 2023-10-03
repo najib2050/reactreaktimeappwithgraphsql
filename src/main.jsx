@@ -13,6 +13,7 @@ import { GlobalStyle } from './globalStyle/GlobalStyle.js';
 import OtherPath from '../components/other/OtherPath.jsx';
 import { ApolloProvider } from '@apollo/client';
 import { client } from '../Appolo.js';
+import PostInfo from '../components/postInfo/PostInfo.jsx';
 
 
 
@@ -33,6 +34,9 @@ const router = createBrowserRouter([
       }, {
         path: "/new-post",
         element: <NewPosts />
+      },{
+        path:`/post/:id`,
+        element:<PostInfo/>
       }
     ]
 
