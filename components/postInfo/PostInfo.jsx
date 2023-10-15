@@ -1,17 +1,16 @@
 import { gql, useQuery } from '@apollo/client'
-import React from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { Thumnail } from '../post/Style'
 
 // create query object 
 const Get_Single_posq_Query=gql`
 query MyQuery($id:Int) {
   posts(where: {id: {_eq:$id}}) {
-    title
     body
     date
     id
     thumnail
+    title
   }
 }
 `
@@ -33,27 +32,38 @@ function PostInfo() {
     variables: { id:id },
   });
   
-  if (loading) return null;
+  if (loading) return "loadig...";
   if (error) return `Error! ${error}`;
   console.log(data)
 
 
 
+
   return (
-    // display the data
-    <div>
-         {data.posts.map((post,index)=>{
+    <>
+    
+    <div style={{display:'flex',alignItems:"center",justifyContent:"center",background:"black",color:"white",height:"100vh"}}>
+         {data.posts.map((post)=>{
           return <>
           <ul key={post.id}>
-            <p>{index}</p>
-            <li>{post.title}</li>
-            <li>{new Date().toDateString(post.date)}</li>
-            <li>{post.id}</li>
+            <h3>{post.title}</h3>
             <Thumnail src={post.thumnail} alt=''/>
+            <div>
+            <h4>{new Date().toDateString(post.date)}</h4>
+            <p style={{textAlign:"center"}}>{post.body}</p>
+            </div>
           </ul>
           </>
          })}
     </div>
+    <div>
+              <Link to={`/newpost/${id}`}>
+              <button >Update</button>
+              </Link>
+              <button style={{background:"red"}}>DELETE</button>
+            </div>
+    
+    </>
   )
 }
 
